@@ -18,10 +18,12 @@ public class PadawanEquipment_09 {
         double beltsAgain = belts;
         double robes = numberOfStudents;
 
+
         while (beltsAgain >= 6) {
             belts--;
             beltsAgain -= 6;
         }
+
 
         double totalPrice = (lightsaberPrice * lightsabers) + (beltsPrice * belts) + (robes * robesPrice);
 
