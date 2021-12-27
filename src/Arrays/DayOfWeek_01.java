@@ -6,7 +6,7 @@ public class DayOfWeek_01 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        String [] daysOfWeek={
+        String[] daysOfWeek = {
                 "Monday",
                 "Tuesday",
                 "Wednesday",
@@ -15,10 +15,11 @@ public class DayOfWeek_01 {
                 "Saturday",
                 "Sunday",
         };
-        int day=Integer.parseInt(scanner.nextLine());
-        if(day>=1 && day<=7);{
-            System.out.println(daysOfWeek[daysOfWeek.length-1]);
+        int day = Integer.parseInt(scanner.nextLine());
+        if (day >= 1 && day <= 7) {
+            System.out.println(daysOfWeek[day - 1]);
+        } else {
+            System.out.println("Invalid day!");
         }
-
     }
 }
