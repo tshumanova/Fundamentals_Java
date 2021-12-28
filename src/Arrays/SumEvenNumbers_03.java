@@ -10,16 +10,16 @@ public class SumEvenNumbers_03 {
         String inputLine = scanner.nextLine();
         int[] numArr = Arrays
                 .stream(inputLine.split(" "))
-                        .mapToInt(Integer::parseInt)
-                        .toArray();
+                .mapToInt(Integer::parseInt)
+                .toArray();
         int sum = 0;
         for (int i = 0; i < numArr.length; i++) {
-            int currentEl = numArr[i];
-            if (currentEl % 2 == 0) {
-                sum = currentEl;
-            }
-            System.out.println(sum);
-        }
 
+            if (numArr[i] % 2 == 0) {
+                sum += numArr[i];
+            }
+
+        }
+        System.out.println(sum);
     }
 }
