@@ -9,12 +9,16 @@ public class SumEvenNumbers_03 {
 
         String inputLine = scanner.nextLine();
         int[] numArr = Arrays
-                .stream(Arrays.stream(inputLine.split(" "))
+                .stream(inputLine.split(" "))
                         .mapToInt(Integer::parseInt)
                         .toArray();
         int sum = 0;
-        for (int i = 0; i < numArr.length ; i++) {
-            
+        for (int i = 0; i < numArr.length; i++) {
+            int currentEl = numArr[i];
+            if (currentEl % 2 == 0) {
+                sum = currentEl;
+            }
+            System.out.println(sum);
         }
 
     }
