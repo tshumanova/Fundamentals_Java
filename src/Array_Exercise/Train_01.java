@@ -11,7 +11,13 @@ public class Train_01 {
         for (int wagon = 0; wagon < countWagons; wagon++) {
             int countPeople = Integer.parseInt(scanner.nextLine());
             wagons[wagon] = countPeople;
-
+            int sum = 0;
+            for (int number : wagons) {
+                System.out.println(number + " ");
+                sum += number
+            }
+            System.out.println();
+            System.out.println(sum);
         }
     }
 }
