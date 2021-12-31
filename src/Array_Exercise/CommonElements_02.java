@@ -9,6 +9,6 @@ public class CommonElements_02 {
         String firstLine = scanner.nextLine();
         String secondLine = scanner.nextLine();
         String[] array1 = firstLine.split(" ");
-
+        String[] array2 = secondLine.split("");
     }
 }
