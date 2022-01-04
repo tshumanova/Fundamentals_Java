@@ -17,7 +17,7 @@ public class Train_01 {
         for (int index = 0; index < wagons.length; index++) {
             int currentElement = wagons[index];
             System.out.print(currentElement + " ");
-            sum+=currentElement;
+            sum += currentElement;
         }
         System.out.println();
         System.out.println(sum);
