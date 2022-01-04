@@ -21,8 +21,11 @@ public class ZigZagArrays_03 {
             }
         }
         for (String element : firstArray) {
-            System.out.println(element + " ");
+            System.out.print(element + " ");
 
+        }  System.out.println();
+        for (String element:secondArray) {
+            System.out.print(element + " ");
         }
     }
 }
