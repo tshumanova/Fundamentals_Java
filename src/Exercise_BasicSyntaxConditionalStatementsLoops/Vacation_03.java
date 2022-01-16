@@ -59,10 +59,10 @@ public class Vacation_03 {
         double totalPrice = pricePerNight * countPeople;
 
         if (groupType.equals("Students") && countPeople >= 30) {
-            totalPrice *=0.85;
+            totalPrice *= 0.85;
 
         } else if (groupType.equals("Business") && countPeople >= 100) {
-            totalPrice=pricePerNight*(countPeople-10);
+            totalPrice = pricePerNight * (countPeople - 10);
             totalPrice = totalPrice - 0.10 * pricePerNight;
         } else if (groupType.equals("Regular") && countPeople >= 10 && countPeople <= 20) {
             totalPrice = totalPrice - 0.05 * totalPrice;

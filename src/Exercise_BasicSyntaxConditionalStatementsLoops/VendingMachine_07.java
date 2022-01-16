@@ -6,63 +6,63 @@ public class VendingMachine_07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int peopleCount;
+        peopleCount = scanner.nextInt();
+        scanner.nextLine();
+        String groupType = scanner.nextLine();
+        String day = scanner.nextLine();
 
-        String command = scanner.nextLine();
-        double sum = 0;
-        while (!"Start".equals(command)) {
-            double coins = Double.parseDouble(command);
-            if (coins == 0.1) {
-                sum += coins;
-            } else if (coins == 0.2) {
-                sum += coins;
-            } else if (coins == 0.5) {
-                sum += coins;
-            } else if (coins == 1) {
-                sum += coins;
-            } else if (coins == 2) {
-                sum += coins;
-            } else {
-                System.out.printf("Cannot accept %.2f\n", coins);
+        double price = 0.0;
+//        double sum = price * peopleCount;
+        double discount = 1.0;
+
+
+        if (groupType.equals("Students")) {
+            if (day.equals("Friday")) {
+                price = 8.45;
+            } else if (day.equals("Saturday")) {
+                price = 9.80;
+            } else if (day.equals("Sunday")) {
+                price = 10.46;
             }
-            command = scanner.nextLine();
+
+            if (peopleCount >= 30) {
+                discount = 0.85;
+            }
+
+        } else if (groupType.equals("Business")) {
+            if (day.equals("Friday")) {
+                price = 10.90;
+            } else if (day.equals("Saturday")) {
+                price = 15.60;
+            } else if (day.equals("Sunday")) {
+                price = 16;
+            }
+
+            if (peopleCount >= 100) {
+                peopleCount -= 10;
+            }
+
+        } else if (groupType.equals("Regular")) {
+            if (day.equals("Friday")) {
+                price = 15;
+            } else if (day.equals("Saturday")) {
+                price = 20;
+            } else if (day.equals("Sunday")) {
+                price = 22.5;
+            }
+
+            if (peopleCount >= 10 && peopleCount <= 20) {
+                discount = 0.95;
+            }
+
         }
-        String good = scanner.nextLine();
-        double price = 0;
-        boolean isGood = false;
-        while (!"End".equals(good)) {
-            switch (good) {
-                case "Nuts" -> {
-                    price = 2.0;
-                    isGood = true;
-                }
-                case "Water" -> {
-                    price = 0.7;
-                    isGood = true;
-                }
-                case "Crisps" -> {
-                    price = 1.5;
-                    isGood = true;
-                }
-                case "Soda" -> {
-                    price = 0.8;
-                    isGood = true;
-                }
-                case "Coke" -> {
-                    price = 1.0;
-                    isGood = true;
-                }
-            }
-            if (sum < price) {
-                System.out.println("Sorry, not enough money");
-            } else if (isGood) {
-                System.out.printf("Purchased %s\n", good);
-                sum -= price;
-            } else {
-                System.out.println("Invalid product");
-            }
-            good = scanner.nextLine();
-        }
-        System.out.printf("Change: %.2f", sum);
+
+        double sum = price * peopleCount * discount;
+
+        System.out.printf("Total price: %.2f", sum);
+
+
     }
 }
 

@@ -13,7 +13,7 @@ public class P011_RageExpenses {
         double displayPrice = Double.parseDouble(scanner.nextLine());
 
         double expenses = 0.0;
-        int keyboardTrashes=0;
+        int keyboardTrashes = 0;
         for (int i = 1; i <= lostGame; i++) {
             if (i % 2 == 0) {
                 expenses += headSetPrice;
@@ -24,11 +24,11 @@ public class P011_RageExpenses {
             if (i % 2 == 0 && i % 3 == 0) {
                 keyboardTrashes++;
                 expenses += keyboardPrice;
-            }
-            if(keyboardTrashes%2==0){
-                expenses+=displayPrice;
+                if (keyboardTrashes % 2 == 0) {
+                    expenses += displayPrice;
+                }
             }
         }
-
+        System.out.printf("Rage expenses: %.2f lv.", expenses);
     }
 }
