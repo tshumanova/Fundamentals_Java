@@ -1,19 +1,19 @@
-package MoreExercise_DataTypesVariables;
+package BasicMoreExercise;
 
 import java.util.Scanner;
 
-public class GamingStore_03 {
+public class P03_GamingStore_03 {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
         String input = scanner.nextLine();
         double balance = Double.parseDouble(input);
-        double totalmoney = balance;
+        double totalMoney = balance;
         double totalSpend = 0;
-        double price;
+        double price = 0.0;
 
         while (!"Game time".equalsIgnoreCase(input = scanner.nextLine())) {
-
             price = 0;
             if (balance == 0) {
                 System.out.println("Out of money!");
@@ -54,8 +54,7 @@ public class GamingStore_03 {
             }
         }
         if (balance > 0) {
-
-            System.out.printf("Total spent: $%.2f. Remaining: $%.2f", totalSpend, (totalmoney - totalSpend));
+            System.out.printf("Total spent: $%.2f. Remaining: $%.2f", totalSpend, (totalMoney - totalSpend));
         }
 
 
