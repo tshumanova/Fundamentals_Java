@@ -9,11 +9,11 @@ public class P09_SpiceMustFlow {
         int yield = Integer.parseInt(scanner.nextLine());
         int storage = 0;
         int days = 0;
-        int tab = 0;
+
         while (yield >= 100) {
             storage += yield - 26;
             days++;
-            tab -= 10;
+            yield -= 10;
         }
 
         if (storage >= 26) {
