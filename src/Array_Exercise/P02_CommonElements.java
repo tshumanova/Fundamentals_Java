@@ -9,11 +9,11 @@ public class P02_CommonElements {
         String[] firstArr = scanner.nextLine().split(" ");
         String[] secondArr = scanner.nextLine().split(" ");
 
-        for (String second : secondArr) {
+        for (String secondElement : secondArr) {
 
-            for (String first : firstArr) {
-                if (second.equals(first)) {
-                    System.out.println("first" + " ");
+            for (String firstElement : firstArr) {
+                if (secondElement.equals(firstElement)) {
+                    System.out.println(firstElement + " ");
                 }
             }
         }
