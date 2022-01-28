@@ -13,7 +13,7 @@ public class P02_CommonElements {
 
             for (String firstElement : firstArr) {
                 if (secondElement.equals(firstElement)) {
-                    System.out.println(firstElement + " ");
+                    System.out.print(firstElement + " ");
                 }
             }
         }
