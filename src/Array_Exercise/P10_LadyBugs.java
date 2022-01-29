@@ -20,7 +20,9 @@ public class P10_LadyBugs {
         }
         String line = scanner.nextLine();
         while (!line.equals("end")) {
-            String[] data = line.split(" ")
+            String[] data = line.split(" ");
+            int index = Integer.parseInt(data[0]);
+
             line = scanner.nextLine();
 
         }
