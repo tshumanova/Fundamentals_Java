@@ -22,6 +22,8 @@ public class P10_LadyBugs {
         while (!line.equals("end")) {
             String[] data = line.split(" ");
             int index = Integer.parseInt(data[0]);
+            String direction = data[0];
+            int flyLength = Integer.parseInt(scanner.nextLine());
 
             line = scanner.nextLine();
 
