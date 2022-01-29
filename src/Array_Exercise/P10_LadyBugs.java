@@ -22,11 +22,26 @@ public class P10_LadyBugs {
         while (!line.equals("end")) {
             String[] data = line.split(" ");
             int index = Integer.parseInt(data[0]);
-            String direction = data[0];
-            int flyLength = Integer.parseInt(scanner.nextLine());
+            String direction = data[1];
+            int flyLength = Integer.parseInt(data[2]);
 
+            if (index < 0 || index >= field.length || field[index] != 1) {
+                line = scanner.nextLine();
+                continue;
+            }
+            field[index] = 0;
+            switch (direction) {
+                case "right":
+                    index += flyLength;
+                    while (index < fielSize && field[index] == 1) {
+                        field[index] = 1;
+                    }
+                    break;
+                case "left":
+                    break;
+            }
             line = scanner.nextLine();
-
         }
+        Arrays.stream(field).forEach(e -> System.out.println(e + " "));
     }
 }
