@@ -34,14 +34,24 @@ public class P10_LadyBugs {
                 case "right":
                     index += flyLength;
                     while (index < fielSize && field[index] == 1) {
+                        index += flyLength;
+                    }
+                    if (index < flyLength) {
                         field[index] = 1;
                     }
                     break;
                 case "left":
+                    index -= flyLength;
+                    while (index >= 0 && field[index] == 1) {
+                        index -= flyLength;
+                        if (index >= 0) {
+                            field[index] = 1;
+                        }
+                    }
                     break;
             }
             line = scanner.nextLine();
         }
-        Arrays.stream(field).forEach(e -> System.out.println(e + " "));
+        Arrays.stream(field).forEach(e -> System.out.print(e + " "));
     }
 }
