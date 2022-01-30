@@ -36,7 +36,7 @@ public class P10_LadyBugs {
                     while (index < fielSize && field[index] == 1) {
                         index += flyLength;
                     }
-                    if (index < flyLength) {
+                    if (index < fielSize) {
                         field[index] = 1;
                     }
                     break;
@@ -44,9 +44,10 @@ public class P10_LadyBugs {
                     index -= flyLength;
                     while (index >= 0 && field[index] == 1) {
                         index -= flyLength;
+                    }
                         if (index >= 0) {
                             field[index] = 1;
-                        }
+
                     }
                     break;
             }
