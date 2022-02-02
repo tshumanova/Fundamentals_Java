@@ -13,8 +13,18 @@ public class P05_TopIntegers {
         for (int i = 0; i < numArr.length; i++) {
             boolean isBigger = false;
             for (int j = i + 1; j < numArr.length; j++) {
-
+                if (numArr[i] > numArr[j]) {
+                    maxNumber = numArr[i];
+                    isBigger = true;
+                } else {
+                    isBigger = false;
+                    break;
+                }
+            }
+            if (isBigger && maxNumber != 0) {
+                System.out.print(maxNumber + " ");
             }
         }
+        System.out.print(numArr[numArr.length - 1]);
     }
 }
