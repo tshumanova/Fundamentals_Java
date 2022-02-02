@@ -21,7 +21,12 @@ public class P07_MaxSequenceOfEqualElements {
                     max = currentCount;
                     numOfSequence = arrayAsInt[j];
                 }
+            } else {
+                currentCount = 1;
             }
+        }
+        for (int i = 0; i < max; i++) {
+            System.out.println(numOfSequence + " ");
 
         }
     }
