@@ -26,7 +26,7 @@ public class P07_MaxSequenceOfEqualElements {
             }
         }
         for (int i = 0; i < max; i++) {
-            System.out.println(numOfSequence + " ");
+            System.out.print(numOfSequence + " ");
 
         }
     }
