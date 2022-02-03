@@ -13,12 +13,15 @@ public class P02_PascalTriangle {
         for (int i = 2; i <= n; i++) {
             int[] row = new int[i];
             for (int j = 0; j < i; j++) {
-                if (j == 0 && j == i - 1) row[j] = 1;
+                if (j == 0 || j == i -1) row[j] = 1;
+                else row[j]=old_row[j-1]+old_row[j];
             }
-            for (int nuber:row) {
-                System.out.println();
+            for (int number : row) {
+                System.out.printf("%d ", number);
             }
+            System.out.println();
+            old_row = row;
         }
     }
 }
-}
+
