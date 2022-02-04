@@ -11,7 +11,9 @@ public class P02_VowelsCount {
     }
 
     public static void printVowelsCount(String text){
-        for(int i=0;i<text.length();i++)
+        for(int i=0;i<text.length();i++){
+            char symbol=text.toLowerCase().charAt(i);
+        }
     }
 
 }
