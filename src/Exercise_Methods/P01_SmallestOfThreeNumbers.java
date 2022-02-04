@@ -10,12 +10,14 @@ public class P01_SmallestOfThreeNumbers {
         int num2 = Integer.parseInt(scanner.nextLine());
         int num3 = Integer.parseInt(scanner.nextLine());
 
-        int smallestNum = getSmallestNumber(num1,num2,num3){
-            System.out.println(smallestNum);
+        int smallestNum = getSmallestNumber(num1, num2, num3);
 
-            private static int getSmallestNumeber(int num1,int num2, int num3){
-                int[] numbers={num1,num2,num3}
-            }
-        }
+        System.out.println(smallestNum);
+
     }
+
+    private static int getSmallestNumber(int num1, int num2, int num3) {
+        int[] numbers = {num1, num2, num3}
+    }
+}
 }
