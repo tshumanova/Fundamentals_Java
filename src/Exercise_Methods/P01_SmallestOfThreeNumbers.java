@@ -1,5 +1,6 @@
 package Exercise_Methods;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class P01_SmallestOfThreeNumbers {
@@ -17,7 +18,9 @@ public class P01_SmallestOfThreeNumbers {
     }
 
     private static int getSmallestNumber(int num1, int num2, int num3) {
-        int[] numbers = {num1, num2, num3}
+        int[] numbers = {num1, num2, num3};
+        Arrays.sort(numbers);
+        return numbers[0];
     }
 }
-}
+
