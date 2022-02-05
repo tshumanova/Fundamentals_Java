@@ -18,9 +18,8 @@ public class P01_EncryptSortAndPrinArray {
                 char currentChar = sequence.charAt(j);
                 {
                     sum += currentChar * len;
-                } else {
-                    sum += currentChar / len;
                 }
+
             }
             numbers[i] = sum;
         }
