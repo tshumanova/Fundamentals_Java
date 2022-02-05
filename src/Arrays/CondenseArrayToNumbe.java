@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class CondenseArrayToNumbe {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String lineOfNumbers= scanner.nextLine();
-        String[]numbersAsString=lineOfNumbers.split("\\s+");
+        int lineOfNumbers = scanner.nextInt();
 
-        int[] numbers = new int[numbersAsString.length];
-        for (int i = 0; i <numbers.length ; i++) {
-            numbers[i]=Integer.parseInt(scanner.nextLine());
+        int[] numbers = new int[lineOfNumbers];
+        for (int i = 0; i < numbers.length - 1; i++) {
+            numbers[i] = scanner.nextInt();
         }
-        for (int repetition = 0; repetition <numbers.length-1 ; repetition++) {
-            for (int i = 0; i <numbers.length-1 ; i++) {
-                numbers[i]=numbers[i]+numbers[i+1];
+        int numRepetition = numbers.length-1;
+        for (int repetition = 0; repetition < numRepetition; repetition++) {
+            for (int i = 0; i < numbers.length-1; i++) {
+                numbers[i] = numbers[i] + numbers[i + 1];
             }
         }
         System.out.println(numbers[0]);
