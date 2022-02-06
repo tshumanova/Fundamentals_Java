@@ -11,9 +11,9 @@ public class CondenseArrayToNumbe {
         for (int i = 0; i < numbers.length - 1; i++) {
             numbers[i] = scanner.nextInt();
         }
-        int numRepetition = numbers.length-1;
+        int numRepetition = numbers.length - 1;
         for (int repetition = 0; repetition < numRepetition; repetition++) {
-            for (int i = 0; i < numbers.length-1; i++) {
+            for (int i = 0; i < numbers.length - 1; i++) {
                 numbers[i] = numbers[i] + numbers[i + 1];
             }
         }
