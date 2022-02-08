@@ -9,4 +9,10 @@ public class P01_SignOfIntegerNumbers {
 
         printSing(Integer.parseInt(scanner.nextLine()));
     }
+
+    private static void printSing(int number) {
+        if(number>0){
+            System.out.printf("The number %d is positive.",number);
+        }
+    }
 }
