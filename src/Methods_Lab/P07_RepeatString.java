@@ -11,6 +11,10 @@ public class P07_RepeatString {
     }
 
     private static String repeatString(String s, int repetitions) {
+        String[]strings=new String[repetitions];
+        for (int i = 0; i < strings.length; i++) {
+if(words[i].equels(searchWord))
+        }
         return null;
     }
 }
