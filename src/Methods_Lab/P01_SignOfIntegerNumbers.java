@@ -11,8 +11,12 @@ public class P01_SignOfIntegerNumbers {
     }
 
     private static void printSing(int number) {
-        if(number>0){
-            System.out.printf("The number %d is positive.",number);
+        if (number > 0) {
+            System.out.printf("The number %d is positive.", number);
+        } else if (number < 0) {
+            System.out.printf("The number %d is negative.\n", number);
+        } else {
+            System.out.printf("The number %d is zero.\n", number);
         }
     }
 }
