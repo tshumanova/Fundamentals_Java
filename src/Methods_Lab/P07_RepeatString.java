@@ -1,20 +1,23 @@
 package Methods_Lab;
 
+import java.util.Scanner;
+
 public class P07_RepeatString {
     public static void main(String[] args) {
-        String s = "hello";
-
-
-        int repetitions = 3;
-        String repeated = repeatString(s, repetitions);
-        System.out.println(repeated);
+        Scanner scanner = new Scanner(System.in);
+        String inputStr = scanner.nextLine();
+        int count = Integer.parseInt(scanner.nextLine());
+        System.out.println(repeatString(inputStr, count));
     }
 
-    private static String repeatString(String s, int repetitions) {
-        String[]strings=new String[repetitions];
-        for (int i = 0; i < strings.length; i++) {
-if(words[i].equels(searchWord))
-        }
-        return null;
+    private static String repeatString(String str, int count) {
+        String result = "";
+        for (int i = 0; i < count; i++)
+            result += str;
+        return result;
+
+
     }
+
+
 }
