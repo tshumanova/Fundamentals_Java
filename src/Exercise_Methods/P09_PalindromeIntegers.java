@@ -12,4 +12,8 @@ public class P09_PalindromeIntegers {
             command= scanner.nextLine();
         }
     }
+
+    private static boolean isPalindrome(String num) {
+        boolean isPalindrome=true;
+    }
 }
