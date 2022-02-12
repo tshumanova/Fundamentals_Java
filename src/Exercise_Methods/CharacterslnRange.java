@@ -14,6 +14,9 @@ public class CharacterslnRange {
     }
 
     public static void printCharacter(char start, char end) {
+        for (int i = start + 1; i < end; i++) {
 
+            System.out.printf("%c ", i);
+        }
     }
 }
