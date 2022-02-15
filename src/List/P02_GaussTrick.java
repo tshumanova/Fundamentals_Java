@@ -12,9 +12,12 @@ public class P02_GaussTrick {
                 .map((Integer::parseInt)).collect(Collectors.toList());
         int size = numbers.size();
         for (int i = 0; i < size / 2; i++) {
-            numbers.set(i, numbers.get(i) + numbers.get(numbers.size()) - 1));
-
+            numbers.set(i, numbers.get(i) + numbers.get(numbers.size() - 1));
+            numbers.remove(numbers.size() - 1);
         }
+        System.out.println(numbers.toString().replaceAll("[\\[\\],]", ""));
 
     }
+
 }
+
