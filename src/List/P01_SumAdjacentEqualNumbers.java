@@ -25,7 +25,7 @@ public class P01_SumAdjacentEqualNumbers {
     private static String joinElementsByDelimiter(List<Double> items) {
         String output = "";
         for (Double item : items)
-            output += (new DecimalFormat("0.#").format(items) + " ");
+            output += (new DecimalFormat("0.#").format(item) + " ");
         return output;
     }
 }
