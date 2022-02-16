@@ -10,9 +10,24 @@ public class P03_MergingLists {
         Scanner scanner = new Scanner(System.in);
 
 
-        List<Integer> numbersA = new ArrayList<>(Arrays.asList(10, 6 , 3, 2, 1));
-        List<Integer> numbersB = new ArrayList<>(Arrays.asList(9, 8, 4, 0));
+        List<Integer> sortedA = new ArrayList<>(Arrays.asList(10, 6, 3, 2, 1));
+        List<Integer> sortedB = new ArrayList<>(Arrays.asList(9, 8, 4, 0));
 
+        int indexA = 0;
+        int indexB = 0;
         List<Integer> merged = new ArrayList<>();
+        while (indexA < sortedA.size() || indexB < sortedB.size()) {
+            if (indexA < sortedA.size() && sortedA.get(indexA) > sortedB.get(indexB)) {
+                merged.add(sortedA.get(indexA));
+                indexA++;
+            } else {
+                merged.add(sortedB.get(indexB));
+                indexB++;
+            }
+        }
+        for (int number : merged) {
+            System.out.print(number + " ");
+        }
+
     }
 }
