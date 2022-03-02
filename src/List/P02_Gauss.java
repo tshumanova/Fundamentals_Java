@@ -14,12 +14,12 @@ public class P02_Gauss {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 
-        for (int i = 0; i < numList.size() ; i++) {
-            int firstNum= numList.get(i);
-            int secondNum=numList.get(numList.size()-1-i);
+        for (int i = 0; i < numList.size(); i++) {
+            int firstNum = numList.get(i);
+            int secondNum = numList.get(numList.size() - 1);
 
-            numList.set(i,firstNum+secondNum);
-            numList.remove(numList.size()-1);
+            numList.set(i, firstNum + secondNum);
+            numList.remove(numList.size() - 1);
         }
     }
 }
