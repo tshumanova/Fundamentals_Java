@@ -6,55 +6,60 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class P04_ListOperations {
+
+
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        List<Integer> listArray = Arrays.stream(scan.nextLine().split(" "))
-                .map(Integer::parseInt).collect(Collectors.toList());
+        List<Integer> numbers = Arrays
+                .stream(scanner.nextLine().split("\\s+"))
+                .map(Integer::parseInt)
+                .collect(Collectors.toList());
 
-        String[] operation = scan.nextLine().toLowerCase().split("\\s+");
+        String line = scanner.nextLine();
+        while (!line.equals("end")) {
+            String[] data = line.split("\\s+");
+            String command = data[0];
 
-        while (!"end".equals(operation[0])) {
-            if ("add".equals(operation[0])) {
-                int number = Integer.parseInt(operation[1]);
-
-                listArray.add(number);
-            } else if ("insert".equals(operation[0])) {
-                int number = Integer.parseInt(operation[1]);
-                int position = Integer.parseInt(operation[2]);
-
-                if (position < 0 || position > listArray.size()) {
-                    System.out.println("Invalid Index");
-                } else {
-                    listArray.add(position, number);
-                }
-            } else if ("remove".equals(operation[0])) {
-                int index = Integer.parseInt(operation[1]);
-
-                if (index < 0 || index >= listArray.size()) {
-                    System.out.println("Invalid index");
-                } else {
-                    listArray.remove(index);
-                }
-            } else if ("shift".equals(operation[0])) {
-                int count = Integer.parseInt(operation[2]);
-
-
-                if ("left".equals(operation[1])) {
-                    for (int i = 0; i < count; i++) {
-                        listArray.add(listArray.get(0));
-                        listArray.remove(0);
+            switch (command) {
+                case "Add":
+                    numbers.add(Integer.parseInt(data[1]));
+                    break;
+                case "Insert":
+                    int number = Integer.parseInt(data[1]);
+                    int index = Integer.parseInt(data[2]);
+                    if (index < 0 || index >= numbers.size()) {
+                        System.out.println("Invalid index");
+                    } else {
+                        numbers.add(index, number);
                     }
-                } else if ("right".equals(operation[1])) {
-                    for (int i = 0; i < count; i++) {
-                        listArray.add(0,listArray.get(listArray.size() - 1));
-                        listArray.remove(listArray.size() - 1);
+                    break;
+                case "Remove":
+                    index = Integer.parseInt(data[1]);
+                    if (index < 0 || index >= numbers.size()) {
+                        System.out.println("Invalid index");
+                    } else {
+                        numbers.remove(index);
                     }
-                }
+                    break;
+                case "Shift":
+                    int count = Integer.parseInt(data[2]);
+                    if (data[1].equals("left")) {
+                        for (int i = 0; i < count; i++) {
+                            numbers.add(numbers.get(0));
+                            numbers.remove(0);
+                        }
+                    } else {
+                        for (int i = 0; i < count; i++) {
+                            numbers.add(0, numbers.get(numbers.size() - 1));
+                            numbers.remove(numbers.size() - 1);
+                        }
+                    }
+                    break;
             }
-            operation = scan.nextLine().toLowerCase().split("\\s+");
-        }
 
-        System.out.println(listArray.toString().replaceAll("[\\[\\],]", ""));
+            line = scanner.nextLine();
+        }
+        numbers.forEach(el -> System.out.print(el + " "));
     }
 }
