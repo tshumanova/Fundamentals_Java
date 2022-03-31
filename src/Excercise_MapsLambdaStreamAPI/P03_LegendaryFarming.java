@@ -1,87 +1,47 @@
 package Excercise_MapsLambdaStreamAPI;
 
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class P03_LegendaryFarming {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        TreeMap<String, Integer> keyMaterials = new TreeMap<>();
-        TreeMap<String, Integer> junkMaterials = new TreeMap<>();
+        boolean hasWinner = false;
+        Map<String, Integer> items = new LinkedHashMap<>();
+        items.put("shards", 0);
+        items.put("fragments", 0);
+        items.put("motes", 0);
+        String winner = "";
+        while (!hasWinner) {
+            String[] data = scanner.nextLine().split("\\s+");
+            for (int i = 0; i < data.length - 1; i += 2) {
+                int quantity = Integer.parseInt(data[i]);
+                String resource = data[i + 1].toLowerCase();
+                items.putIfAbsent(resource, 0);
+                items.put(resource, items.get(resource) + quantity);
+                if (resource.equals("shards") || resource.equals("fragments") || resource.equals("motes")) {
 
-        keyMaterials.put("shards", 0);
-        keyMaterials.put("fragments", 0);
-        keyMaterials.put("motes", 0);
-
-        int lastNumber = 0;
-        String winner = " ";
-
-        while (winner.equals(" ")) {
-            String[] data = scanner.nextLine().toLowerCase().split("\\s+");
-
-            for (int a = 0; a < data.length; a++) {
-                if (a % 2 != 0) {
-                    if (data[a].equals("shards") || data[a].equals("fragments") || data[a].equals("motes")) {
-                        lastNumber = keyMaterials.get(data[a]);
-                        keyMaterials.put(data[a], lastNumber + Integer.parseInt(data[a - 1]));
-
-                        if (winner.equals(" ")) {
-                            winner = determinesWinner(keyMaterials, winner, data[a]);
-                            if (!winner.equals(" ")) {
-                                recalculatesWinnerMaterial(keyMaterials, data[a]);
-                                break;
-
-                            }
-                        }
-                    } else {
-                        junkMaterials.putIfAbsent(data[a], 0);
-                        lastNumber = junkMaterials.get(data[a]);
-                        junkMaterials.put(data[a], lastNumber + Integer.parseInt(data[a - 1]));
+                    if (items.get(resource) >= 250) {
+                        items.put(resource, items.get(resource) - 250);
+                        winner = resource;
+                        hasWinner = true;
+                        break;
                     }
                 }
             }
-
         }
-        System.out.println(winner + "obtained!");
-
-        keyMaterials
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed().thenComparing(Map.Entry.comparingByKey()))
-                .forEach(result -> System.out.printf("%s: %d%n", result.getKey(), result.getValue()));
-
-        junkMaterials
-                .entrySet()
-                .stream()
-                .sorted(Map.Entry.<String, Integer>comparingByKey())
-                .forEach(result -> System.out.printf("%s: %d%n", result.getKey(), result.getValue()));
-    }
-
-
-    private static String determinesWinner(TreeMap<String, Integer> keyMats, String winner, String key) {
-
-        if (keyMats.get(key) >= 250) {
-            switch (key) {
-                case "shards":
-                    winner = "Shadowmourne";
-                    break;
-                case "fragment":
-                    winner = "Valanyr";
-                    break;
-                case "motes":
-                    winner = "Dragonwrath";
-                    break;
-            }
+        switch (winner) {
+            case "shards":
+                System.out.println("Shadowmourne obtained!");
+                break;
+            case "fragments":
+                System.out.println("Valanyr obtained!");
+                break;
+            case "motes":
+                System.out.println("Dragonwrath obtained!");
+                break;
         }
-        return winner;
-    }
-
-    public static void recalculatesWinnerMaterial(TreeMap<String, Integer> keyMaterials, String key) {
-        int newValue = keyMaterials.get(key) - 250;
-        keyMaterials.put(key, newValue);
+        items.forEach((k, v) -> System.out.printf("%s: %d%n", k, v));
     }
 }
-
 
