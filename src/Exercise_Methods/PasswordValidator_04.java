@@ -10,9 +10,19 @@ public class PasswordValidator_04 {
         //проверка за съдържанието -. само букви и цифри
         //проверка за брой на цифрите -> минимум 2
     }
-        //метод за валидиране на дължината
-        //метод за валидиране а съдържанието
-        //метод за валидиране на брой на цифрите
+
+    //метод за валидиране на дължината->true(valid), false(invalid)
+    private static boolean isValidLength(String password) {
+       /* if (password.length() >= 6 && password.length() <= 10) {
+            return true;
+        } else {
+            return false;
+        }*/
+        //Върни ми стойността на този израз
+        return password.length() >= 6 && password.length() <= 10;
+    }
+    //метод за валидиране а съдържанието
+    //метод за валидиране на брой на цифрите
 
 
 }
