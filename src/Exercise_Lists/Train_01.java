@@ -12,7 +12,7 @@ public class Train_01 {
         List<Integer> train=new ArrayList<>();
         int capacity= Integer.parseInt(scanner.nextLine());
         for (int i = 0; i <= line.length; i++) {
-            
+            train.add(Integer.parseInt(line[i]);
         }
 
     }
