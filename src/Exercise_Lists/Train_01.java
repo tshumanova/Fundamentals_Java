@@ -9,11 +9,14 @@ public class Train_01 {
         Scanner scanner = new Scanner(System.in);
         //Даден списък с вагони, всяко число е броя на пътниците в даденият вагон
         String[] input = scanner.nextLine().split(" ");
-        List<Integer> train = new ArrayList<>();
+
         // получаваме максималният капацитет на всеки вагон
         int capacity = Integer.parseInt(scanner.nextLine());
+        List<Integer> train = new ArrayList<>();
+        // получаваме максималният капацитет на всеки вагон
 
-        for (int i = 0; i <= input.length; i++) {
+
+        for (int i = 0; i < input.length; i++) {
             train.add(Integer.parseInt(input[i]));
         }
         while (!input[0].equals("end")) {
@@ -24,18 +27,21 @@ public class Train_01 {
             }
             if (input[0].equals("Add")) {
                 train.add(Integer.parseInt(input[1]));
-
             } else if (!input[0].equals("end")) {
                 for (int i = 0; i < train.size(); i++) {
                     int sum = train.get(i) + Integer.parseInt(input[0]);
                     if (capacity >= sum) {
-
                         train.set(i, sum);
+                        break;
                     }
-
                 }
             }
         }
+        for (int var : train) {
+            System.out.print(var + " ");
 
+        }
     }
 }
+
+
