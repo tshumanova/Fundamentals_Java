@@ -15,7 +15,11 @@ public class Train_01 {
 
         for (int i = 0; i <= input.length; i++) {
             train.add(Integer.parseInt(input[i]));
-            System.out.println(train);
+        }
+        while (!input[0].equals("end")){
+            if(!input[0].equals("end")){
+                input=scanner.nextLine().split(" ");
+            }
         }
 
     }
