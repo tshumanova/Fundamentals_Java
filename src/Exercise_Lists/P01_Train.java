@@ -27,7 +27,7 @@ public class P01_Train {
                 for (int i = 0; i < train.size(); i++) {
                     int sum = train.get(i) + Integer.parseInt(input[0]);
                     if (capacity >= sum) {
-                        train.set(i, sum);
+                        train.set(i,sum);
                         break;
                     }
                 }
