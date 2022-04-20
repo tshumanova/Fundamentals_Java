@@ -1,5 +1,7 @@
 package Exercise_ObjectsAndClasses;
 
+import java.util.Scanner;
+
 public class Article_02 {
 
     //полета
@@ -23,5 +25,11 @@ public class Article_02 {
 
     public void setAuthor(String newAuthor) {
         this.author = newAuthor;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
     }
 }
