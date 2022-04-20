@@ -39,11 +39,22 @@ public class Article_02 {
 
         Article article = new Article(title, content, author);
         int commandCount = Integer.parseInt(scanner.nextLine());
-        for (int i = 1; i <= commandCount; i++) {
+        for (int count = 1; count <= commandCount; count++) {
             String command = scanner.nextLine();
+
             String commandName = command.split(":")[0];
             String commandValue = command.split(": ")[1];
-
+            switch (commandName) {
+                case "Edit":
+                    article.setContent(commandValue);
+                    break;
+                case "ChangeAuthor":
+                    article.setAuthor(commandValue);
+                    break;
+                case "Rename":
+                    article.setTitle(commandValue);
+                    break;
+            }
         }
     }
 }
