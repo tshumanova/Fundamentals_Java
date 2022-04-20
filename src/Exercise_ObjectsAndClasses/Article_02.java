@@ -36,5 +36,14 @@ public class Article_02 {
         String title = articlesParts[0];
         String content = articlesParts[1];
         String author = articlesParts[2];
+
+        Article article = new Article(title, content, author);
+        int commandCount = Integer.parseInt(scanner.nextLine());
+        for (int i = 1; i <= commandCount; i++) {
+            String command = scanner.nextLine();
+            String commandName = command.split(":")[0];
+            String commandValue = command.split(": ")[1];
+
+        }
     }
 }
