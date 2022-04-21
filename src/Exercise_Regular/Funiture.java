@@ -27,5 +27,7 @@ public class Funiture {
             line = scanner.nextLine();
         }
         System.out.println("Bought furniture:");
+        purchases.forEach(System.out::println);
+        System.out.printf("Total money spend: %2f", totalMoney);
     }
 }
