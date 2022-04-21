@@ -20,6 +20,8 @@ public class Funiture {
             while (matcher.find()) {
                 String name = matcher.group("name");
                 double price = Double.parseDouble(matcher.group("price"));
+                double quantity = Double.parseDouble(matcher.group("quantity"));
+                purchases.add(name);
             }
 
         }
