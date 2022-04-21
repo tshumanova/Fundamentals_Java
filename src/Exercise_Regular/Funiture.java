@@ -22,9 +22,10 @@ public class Funiture {
                 double price = Double.parseDouble(matcher.group("price"));
                 double quantity = Double.parseDouble(matcher.group("quantity"));
                 purchases.add(name);
+                totalMoney += price * quantity;
             }
-
+            line = scanner.nextLine();
         }
-
+        System.out.println("Bought furniture:");
     }
 }
