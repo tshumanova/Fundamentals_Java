@@ -9,6 +9,6 @@ public class SoftUniBarlncome {
 
         Pattern pattern = Pattern.compile("%(?<name>[A-Z][a-z]+)%[^|$.]*?<(?<product>\\w+)>[^|$.]*?\\|(?<count>\\d+)\\|[^|$.]*?(?<price>\\d+\\.?\\d+)\\$");
         double income = 0;
+        String line = scanner.nextLine();
 
-    }
-}
+
