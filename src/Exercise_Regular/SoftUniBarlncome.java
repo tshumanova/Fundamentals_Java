@@ -21,6 +21,7 @@ public class SoftUniBarlncome {
                 double price = Double.parseDouble(matcher.group("price"));
                 double currentIncome = count * price;
                 income += currentIncome;
+                System.out.printf("%s: %s - %.2f%n", name, product, currentIncome);
             }
         }
     }
