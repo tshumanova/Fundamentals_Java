@@ -13,6 +13,11 @@ public class SoftUniBarlncome {
         String line = scanner.nextLine();
         while (!line.equals("end of shift")) {
             Matcher matcher = pattern.matcher(line);
+
+            while(matcher.find()){
+                String name= matcher.group("name");
+                String
+            }
         }
     }
 }
