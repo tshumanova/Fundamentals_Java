@@ -23,7 +23,9 @@ public class SoftUniBarlncome {
                 income += currentIncome;
                 System.out.printf("%s: %s - %.2f%n", name, product, currentIncome);
             }
+            line = scanner.nextLine();
         }
+        System.out.printf("Total income: %.2f", income);
     }
 }
 
