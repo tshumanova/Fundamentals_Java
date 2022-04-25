@@ -14,9 +14,10 @@ public class SoftUniBarlncome {
         while (!line.equals("end of shift")) {
             Matcher matcher = pattern.matcher(line);
 
-            while(matcher.find()){
-                String name= matcher.group("name");
-                String
+            while (matcher.find()) {
+                String name = matcher.group("name");
+                String product =matcher.group("product");
+
             }
         }
     }
