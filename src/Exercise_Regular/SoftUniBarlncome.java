@@ -16,8 +16,9 @@ public class SoftUniBarlncome {
 
             while (matcher.find()) {
                 String name = matcher.group("name");
-                String product =matcher.group("product");
-
+                String product = matcher.group("product");
+                int count = Integer.parseInt(matcher.group("count"));
+                double price = Double.parseDouble(matcher.group("price"));
             }
         }
     }
