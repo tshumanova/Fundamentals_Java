@@ -19,6 +19,8 @@ public class SoftUniBarlncome {
                 String product = matcher.group("product");
                 int count = Integer.parseInt(matcher.group("count"));
                 double price = Double.parseDouble(matcher.group("price"));
+                double currentIncome = count * price;
+                income += currentIncome;
             }
         }
     }
