@@ -39,13 +39,30 @@ public class Bakery {
                         if (wantedQuantity <= foodInfo.get(wantedFood)) {
                             foodSell.put(wantedFood, wantedQuantity);
                             foodInfo.put(wantedFood, foodInfo.get(wantedFood) - wantedQuantity);
-                            if (foodInfo.get(wantedFood) == 0) ;
-                            {
+                            if (foodInfo.get(wantedFood) == 0) {
                                 foodInfo.remove(wantedFood);
                             }
-                        }
-                    }
+                            System.out.printf("You sold %d %s.%n", wantedQuantity, wantedFood);
 
-                    input = scanner.nextLine();
+                            break;
+                        } else {
+                            foodSell.put(wantedFood, foodInfo.get(wantedFood));
+                            foodInfo.remove(wantedFood);
+                            System.out.printf("There aren't enough %s. You sold the last %d of them.%n", wantedQuantity, foodInfo.get(wantedFood));
+                        }
+                    } else {
+                        System.out.printf("You do not have any %s.%n", wantedFood);
+                    }
             }
+            input = scanner.nextLine();
         }
+        for (Map.Entry<String, Integer> entry : foodInfo.entrySet()) {
+            System.out.printf("%s: %d%n", entry.getKey(), entry.getValue());
+        }
+        for (Map.Entry<String, Integer> stringIntegerEntry : foodSell.entrySet()) {
+            int allProductSell = stringIntegerEntry.getValue();
+            allSold += allProductSell;
+        }
+        System.out.printf("All sold: %d goods", allSold);
+    }
+}
