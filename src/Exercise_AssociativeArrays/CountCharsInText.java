@@ -11,17 +11,17 @@ public class CountCharsInText {
 
         Map<Character, Integer> charsCount = new Hashtable<>();
         for (char symbol : text.toCharArray()) {
-           if(symbol==' '){
-               continue;
-           }
+            if (symbol == ' ') {
+                continue;
+            }
 
             if (!charsCount.containsKey(symbol)) {
                 charsCount.put(symbol, 1);
             } else {
-                int currentCount=charsCount.get(symbol);
-                charsCount.put(symbol,currentCount+1);
+                int currentCount = charsCount.get(symbol);
+                charsCount.put(symbol, currentCount + 1);
             }
         }
-
+        charsCount.entrySet().forEach(entry -> System.out.println(entry.getKey() + "-> " + entry.getValue()));
     }
 }
