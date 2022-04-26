@@ -47,14 +47,13 @@ public class P03_LegendaryFarming {
             }
         }
         materials.entrySet().stream()
-               .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
-
 
 
         junks.entrySet().stream()
                 .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
-                .forEach(entry->System.out.println(entry.getKey() +": " + entry.getValue()));
-        }
+                .forEach(entry -> System.out.println(entry.getKey() + ": " + entry.getValue()));
+    }
 }
 
