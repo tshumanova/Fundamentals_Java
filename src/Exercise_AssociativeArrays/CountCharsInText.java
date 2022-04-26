@@ -22,6 +22,10 @@ public class CountCharsInText {
                 charsCount.put(symbol, currentCount + 1);
             }
         }
-        charsCount.entrySet().forEach(entry -> System.out.println(entry.getKey() + "-> " + entry.getValue()));
+        for (Map.Entry<Character, Integer> entry : charsCount.entrySet()) {
+            System.out.println(entry.getKey() + "-> " + entry.getValue());
+        }
+
+        //  charsCount.entrySet().forEach(entry -> System.out.println(entry.getKey() + "-> " + entry.getValue()));
     }
 }
