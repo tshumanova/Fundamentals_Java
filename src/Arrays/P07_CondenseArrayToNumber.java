@@ -5,9 +5,10 @@ public class P07_CondenseArrayToNumber {
 
         int[] numbers = new int[]{5, 0, 4, 1, 2};
         for (int repetition = 0; repetition < numbers.length - 1; repetition++) {
-            for (int i = 0; i < numbers.length-1; i++) {
-                
+            for (int i = 0; i < numbers.length - 1; i++) {
+                numbers[i] = numbers[i] + numbers[i + 1];
             }
         }
+        System.out.println(numbers[0]);
     }
 }
