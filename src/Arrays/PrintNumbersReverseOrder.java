@@ -7,5 +7,6 @@ public class PrintNumbersReverseOrder {
         Scanner scanner = new Scanner(System.in);
         int number = Integer.parseInt(scanner.nextLine());
         int[] numbers = new int[number];
+
     }
 }
