@@ -13,6 +13,6 @@ public class PrintNumbersReverseOrder {
         for (int i = numArr.length - 1; i >= 0; i--) {
             System.out.print(numArr[i] + " ");
         }
-
+        System.out.println();
     }
 }
