@@ -18,12 +18,26 @@ public class T06_EqualArrays {
                 .toArray();
 
         boolean arrayAreEquals;
+        int sum = 0;
+        int differenceIndex = 0;
+
         if (firstArr.length != secondArr.length) {
             arrayAreEquals = false;
+            differenceIndex = Math.min(firstArr.length, secondArr.length);
         } else {
             arrayAreEquals = true;
             for (int i = 0; i < firstArr.length; i++) {
-
+                sum += firstArr[i];
+                if (firstArr[i] != secondArr[i]) {
+                    arrayAreEquals = false;
+                    differenceIndex = i;
+                }
             }
         }
+        if (arrayAreEquals) {
+            System.out.printf("Arrays are identical. Sum: %d",sum);
+        } else {
+            System.out.printf("Arrays are not identical. Found difference at %d index.",differenceIndex);
+        }
     }
+}
