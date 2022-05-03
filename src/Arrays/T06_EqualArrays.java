@@ -31,6 +31,7 @@ public class T06_EqualArrays {
                 if (firstArr[i] != secondArr[i]) {
                     arrayAreEquals = false;
                     differenceIndex = i;
+                    break;
                 }
             }
         }
