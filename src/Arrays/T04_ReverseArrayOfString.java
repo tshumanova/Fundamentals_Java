@@ -8,8 +8,10 @@ public class T04_ReverseArrayOfString {
         String elements = scanner.nextLine();
         String[] arrString = elements.split(" ");
         for (int i = 0; i < arrString.length / 2; i++) {
-            String oldElement=arrString[i];
-
+            String oldElement = arrString[i];
+            arrString[i] = arrString[arrString.length - 1 - i];
+            arrString[arrString.length - 1 - i] = oldElement;
         }
+        System.out.println(String.join(" ",arrString));
     }
 }
