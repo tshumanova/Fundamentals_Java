@@ -1,8 +1,6 @@
 package Associative_Arrays;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Т01_CountRealNumbers {
@@ -13,6 +11,11 @@ public class Т01_CountRealNumbers {
                 .stream(scanner.nextLine().split(" "))
                 .map(Double::parseDouble)
                 .collect(Collectors.toList());
+
+        Map<Double, Integer> countNumbersMap = new HashMap<>();
+        for (int i = 0; i < numbersList.size(); i++) {
+
+        }
 
 
     }
