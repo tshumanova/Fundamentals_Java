@@ -18,6 +18,11 @@ public class Т01_CountRealNumbers {
 
         for (int i = 0; i < numbersList.size(); i++) {
             double currentNumber = numbersList.get(i);
+            if (countNumbersMap.containsKey(currentNumber)) {
+                countNumbersMap.put(currentNumber, countNumbersMap.get(currentNumber) + 1);
+            } else {
+
+            }
         }
 
 
