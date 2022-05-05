@@ -21,7 +21,7 @@ public class Т01_CountRealNumbers {
             if (countNumbersMap.containsKey(currentNumber)) {
                 countNumbersMap.put(currentNumber, countNumbersMap.get(currentNumber) + 1);
             } else {
-
+                countNumbersMap.put(currentNumber,1);
             }
         }
 
