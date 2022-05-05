@@ -14,7 +14,8 @@ public class Т01_CountRealNumbers {
                 .map(Double::parseDouble)
                 .collect(Collectors.toList());
 
-        Map<Double, Integer> numbersCounts = new TreeMap<>();
+        Map<Double, Integer> countNumbersMap = new TreeMap<>();
+
         for (int i = 0; i < numbersList.size(); i++) {
             double currentNumber = numbersList.get(i);
         }
