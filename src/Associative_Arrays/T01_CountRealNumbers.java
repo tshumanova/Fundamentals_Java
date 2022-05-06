@@ -24,9 +24,9 @@ public class T01_CountRealNumbers {
                 countNumbersMap.put(currentNum, 1);
             }
         }
+        //
         for (Map.Entry<Double, Integer> entry : countNumbersMap.entrySet()) {
             System.out.printf("%.0f -> %d%n", entry.getKey(), entry.getValue());
         }
-
     }
 }
