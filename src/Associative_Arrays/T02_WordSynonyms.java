@@ -19,5 +19,8 @@ public class T02_WordSynonyms {
                 wordsMap.get(word).add(synonym);
             }
         }
+        for (Map.Entry<String, List<String>> entry : wordsMap.entrySet()) {
+            System.out.printf("%s - %s%n", entry.getKey(), String.join(", ", entry.getValue()));
+        }
     }
 }
