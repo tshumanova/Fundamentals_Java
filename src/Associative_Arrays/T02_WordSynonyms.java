@@ -1,9 +1,6 @@
 package Associative_Arrays;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class T02_WordSynonyms {
     public static void main(String[] args) {
@@ -15,6 +12,12 @@ public class T02_WordSynonyms {
 
             String word = scanner.nextLine();
             String synonym = scanner.nextLine();
+            if (!wordsMap.containsKey(word)) {
+                wordsMap.put(word, new ArrayList<>());
+                wordsMap.get(word).add(synonym);
+            } else {
+                wordsMap.get(word).add(synonym);
+            }
         }
     }
 }
