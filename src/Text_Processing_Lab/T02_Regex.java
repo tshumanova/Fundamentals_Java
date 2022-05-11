@@ -10,5 +10,14 @@ public class T02_Regex {
         Scanner scanner = new Scanner(System.in);
         String[] wordsArr = scanner.nextLine().split(" ");
         List<String> resultList = new ArrayList<>();
+        for (String s : wordsArr) {
+            resultList.add(repeatString(s, s.length()));
+        }
+        System.out.println(String.join("", resultList));
     }
+
+    private static String repeatString(String word, int count) {
+    }
+
+
 }
