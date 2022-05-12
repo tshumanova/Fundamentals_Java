@@ -30,13 +30,20 @@ public class T01_TheImitationGame {
         System.out.println("The decrypted message is: " + message);
     }
 
-    private static String insert(String message, int index, String substring) {
-
+    private static String changeAll(String message, String substr, String replacement) {
         return null;
     }
 
-    private static String move(String message, int parseInt) {
-        return null;
+    private static String insert(String message, int index, String substring) {
+        String firstPart = message.substring(0, index);
+        String secondPart = message.substring(index);
+        return firstPart + substring + secondPart;
+    }
+
+    private static String move(String message, int length) {
+        String firstPart = message.substring(0, length);
+        String secondPart = message.substring(length);
+        return secondPart + firstPart;
     }
 
 
