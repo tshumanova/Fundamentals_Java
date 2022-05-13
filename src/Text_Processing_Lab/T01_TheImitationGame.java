@@ -31,7 +31,7 @@ public class T01_TheImitationGame {
     }
 
     private static String changeAll(String message, String substr, String replacement) {
-        return null;
+        return message.replace(substr,replacement);
     }
 
     private static String insert(String message, int index, String substring) {
