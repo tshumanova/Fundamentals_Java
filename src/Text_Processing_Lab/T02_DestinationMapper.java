@@ -13,15 +13,17 @@ public class T02_DestinationMapper {
 
         Pattern pattern = Pattern.compile("([=/]) (?<destination>[A-Z][a-z]{2,})\\1");
         Matcher matcher = pattern.matcher(input);
+
         List<String> destinations = new ArrayList<>();
+        int travelPoint = 0;
         boolean foundSomething = matcher.find();
         while (foundSomething) {
-            System.out.println(matcher.group());
+            destinations.add(matcher.group(2));
 
             foundSomething = matcher.find();
         }
 
-        System.out.println("Destinations: Hawai, Cyprus");
+        System.out.println("Destinations: " + String.join(", ", destinations));
         System.out.println("Travel Points : 0");
     }
 }
