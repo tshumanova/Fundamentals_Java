@@ -15,15 +15,18 @@ public class T02_DestinationMapper {
         Matcher matcher = pattern.matcher(input);
 
         List<String> destinations = new ArrayList<>();
-        int travelPoint = 0;
+        int travelPoints = 0;
         boolean foundSomething = matcher.find();
         while (foundSomething) {
-            destinations.add(matcher.group(2));
+            String destination = (matcher.group("destination"));
+            destinations.add(destination);
+            travelPoints += destination.length();
+
 
             foundSomething = matcher.find();
         }
 
         System.out.println("Destinations: " + String.join(", ", destinations));
-        System.out.println("Travel Points : 0");
+        System.out.println("Travel Points: " + travelPoints);
     }
 }
