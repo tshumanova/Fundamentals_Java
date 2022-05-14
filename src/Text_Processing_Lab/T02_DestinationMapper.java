@@ -8,7 +8,7 @@ public class T02_DestinationMapper {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-        Pattern pattern= Pattern.compile("");
+        Pattern pattern= Pattern.compile("([=/]) (?<destination>[A-Z][a-z]{2,})\\1");
         System.out.println("Destinations: Hawai, Cyprus");
         System.out.println("Travel Points : 0");
     }
