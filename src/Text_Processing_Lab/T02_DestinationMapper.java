@@ -11,7 +11,7 @@ public class T02_DestinationMapper {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-        Pattern pattern = Pattern.compile("([=/]) (?<destination>[A-Z][a-z]{2,})\\1");
+        Pattern pattern = Pattern.compile("([=/]) (?<destination>[A-Z][A-Za-z]{2,})\\1");
         Matcher matcher = pattern.matcher(input);
 
         List<String> destinations = new ArrayList<>();
@@ -27,6 +27,9 @@ public class T02_DestinationMapper {
         }
 
         System.out.println("Destinations: " + String.join(", ", destinations));
-        System.out.println("Travel Points: " + travelPoints);
+        System.out.println("Travel Points: " + destinations
+                .stream()
+                .mapToInt(d -> d.length())
+                .sum());
     }
 }
