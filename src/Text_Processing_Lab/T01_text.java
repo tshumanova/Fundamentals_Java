@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class T01_text {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
         StringBuilder digits = new StringBuilder();
@@ -21,6 +22,8 @@ public class T01_text {
                 other.append(symbol);
             }
         }
-
-            }
+        System.out.println(digits);
+        System.out.println(letter);
+        System.out.println(other);
+    }
 }
